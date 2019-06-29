@@ -1,6 +1,6 @@
 # cep-firebase sample
 
-Vue CLI comes with [native .env support](https://cli.vuejs.org/guide/mode-and-env.html#environment-variables) for environment variables. This means that we can have a `.env` file at the root of our repo which contains any shared variables to be used within any other file of our repository, with contents like this:
+Vue CLI comes with [native .env support](https://cli.vuejs.org/guide/mode-and-env.html#environment-variables) for environment variables. This means that we can have a `.env` file [at the root of our repo (like this one)](https://github.com/Inventsable/cep-firebase/blob/master/.env) which contains any shared variables to be used within any other file of our repository, with contents like this:
 
 ## ./.env
 ```
@@ -21,7 +21,7 @@ Above are the contents from our config variable from firebase:
 
 We can now copy/paste the same config file for any and all of our firebase projects or use certain key/value pairs across the scope of our entire project (no need for import, require, or other methods):
 
-## ./src/firebase/init.js
+## [./src/firebase/init.js](https://github.com/Inventsable/cep-firebase/blob/master/src/firebase/init.js)
 
 ```js
 import firebase from 'firebase/app'
@@ -46,9 +46,9 @@ Anything defined in `.env` will be accessible in the `process.env` object, with 
 
 ---
 
-## Firestore database (./src/components/firebasetest.vue)
+## [./src/components/firebasetest.vue](https://github.com/Inventsable/cep-firebase/blob/master/src/firebase/init.js)
 
-### Three methods to retrieve data:
+### Three methods to retrieve data from Firestore database:
 
 ```html
 <script>
@@ -64,7 +64,7 @@ export default {
   created() {
     // Only one of these is needed, having all produces duplicates.
 
-    // Display firestore database collection once
+    // Get firestore database collection once
     db.collection("users")
       .get()
       .then(snapshot => {
@@ -77,7 +77,7 @@ export default {
         }
       })
 
-    // Query for a single document read to find particular item
+    // Query for a single document read to find a particular item
     db.collection("users").where('name', '==', 'Tom')
       .get()
       .then(snapshot => {
@@ -90,7 +90,7 @@ export default {
         }
       })
 
-    // Display any added items in real time
+    // Display entire collection contents and update in real time
     const ref = db.collection("users");
     ref.onSnapshot(snapshot => {
       snapshot.docChanges().forEach(change => {
@@ -106,6 +106,6 @@ export default {
 </script>
 ```
 
-### Results and firestore database:
+### Results and firestore database in question:
 
 ![](./src/assets/firestore.png)
