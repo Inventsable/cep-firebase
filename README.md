@@ -1,5 +1,11 @@
 # cep-firebase sample
 
+## Why should I care about a .env file?
+
+![](./src/assets/goodguy.png)
+
+If you don't take precautions to hide your API keys and accidentally expose them somewhere like GitHub, you risk giving others access to your data -- like this bot who extracted my API keys 37 seconds after I published this repo.
+
 Vue CLI comes with [native .env support](https://cli.vuejs.org/guide/mode-and-env.html#environment-variables) for environment variables. This means that we can have a `.env` file [at the root of our repo (like this one)](https://github.com/Inventsable/cep-firebase/blob/master/.env) which contains any shared variables to be used within any other file of our repository, with contents like this:
 
 ## ./.env
@@ -13,7 +19,7 @@ VUE_APP_MESSAGINGSENDERID=850065936779
 VUE_APP_MESSAGINGSENDERID=1:850065936779:web:6d5a884eb252c63d
 ```
 
-> **CAUTION:** Always include the .env file in your gitignore when exposing your code (like putting it on GitHub). It is not gitignored in this example for demonstration purposes only, but publishing your API keys potentially gives any one the ability to use or modify your database with read/write privileges.
+> **CAUTION:** Always include the .env file in your gitignore when exposing your code (like putting it on GitHub). It is not gitignored in this example for demonstration purposes only.
 
 Above are the contents from our config variable from firebase:
 
