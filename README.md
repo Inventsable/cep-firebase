@@ -17,7 +17,7 @@ VUE_APP_FIREBASE_DATABASEURL=https://cep-sample.firebaseio.com
 VUE_APP_PROJECTID=cep-sample
 VUE_APP_FIREBASE_BUCKET=
 VUE_APP_MESSAGINGSENDERID=850065936779
-VUE_APP_MESSAGINGSENDERID=1:850065936779:web:6d5a884eb252c63d
+VUE_APP_ID=1:850065936779:web:6d5a884eb252c63d
 ```
 
 > **CAUTION:** Always include the .env file in your gitignore when exposing your code (like putting it on GitHub). It is not gitignored in this example for demonstration purposes only.
